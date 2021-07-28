@@ -1,0 +1,12 @@
+
+<form class="loginCard" (ngSubmit)="onSubmit()">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <label for="user">Usuario</label>
+            <input id="user" ([ngModel])="usuario.username" type="text" required>
+            <label for="password">Password</label>
+            <input id="password" ([ngModel])="usuario.password" type="text" required>
+          <a href="#" class="btn btn-primary">Login</a>
+        </div>
+      </div>
+    </form>
