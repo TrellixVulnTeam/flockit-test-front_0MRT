@@ -1,12 +1,16 @@
 
-<form class="loginCard" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit( f )" #f="ngForm">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <label for="user">Usuario</label>
-            <input id="user" ([ngModel])="usuario.username" type="text" required>
+            <input id="user" ([ngModel])="usuario.username" type="text" required minlength="3">
             <label for="password">Password</label>
-            <input id="password" ([ngModel])="usuario.password" type="text" required>
-          <a href="#" class="btn btn-primary">Login</a>
+           <!-- <span *ngIf="f.submitted && f.controls['password'].errors"
+                          class="text-danger animated fadeIn">Al menos 6 letras</span>-->
+            <input id="password" ([ngModel])="usuario.password" type="password" required minlength="2">
+            <button class="login100-form-btn" type="submit">
+              Login
+          </button>
         </div>
       </div>
     </form>
